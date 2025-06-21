@@ -13,7 +13,7 @@ const Home = () => {
 
   return(
     <div>
-      <section className="py-16">
+      <section className="py-16 ">
         <div className="container mx-auto ">
           <div>
             {filteredProducts.map(product =>{
