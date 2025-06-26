@@ -3,7 +3,8 @@ import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
 import { BsBag } from "react-icons/bs";
 import Logo from "../image/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, Links } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const Header = () => {
   const [isActive , setIsActive] = useState(false);
@@ -27,6 +28,7 @@ useEffect(()=>{
             <img className="w-[40px]" src={Logo} /><span className="pl-4 uppercase text-2xl tracking-widest">autumn</span>
           </div>
         </Link>
+        <Navbar />
         <div
           onClick={() => setisOpen(!isOpen)}
           className="cursor-pointer flex relative"
