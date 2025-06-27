@@ -6,11 +6,10 @@ const About = () => {
   return (
     <section className="pt-32 pb-12 lg:py-20 h-screen-[443px]">
       <div className="container mx-auto">
- 
         <div>
-          <img src={Aboutus} className="w-[1700px]" />
+          <img src={Aboutus} className="w-[1700px] h-[400px]" />
         </div>
-        <div className=" absolute right-[40%] top-[40%] left-[10%]">
+        <div className=" absolute right-[50%] top-[40%] left-[10%]">
           <h1 className="text-[50px] uppercase font-medium leading-5 tracking-widest text-center">
             About us
           </h1>
@@ -19,7 +18,7 @@ const About = () => {
           <div>
             <p className="text-xl ">
               <b className="text-blue-500">
-                <Link to="/"> E-commerce shop </Link>
+                <Link to="/"> E-Shop </Link>
               </b>{" "}
               is India's foremost leading manufacturer, Exporter and wholesaler
               of Indian ethnic wear.
@@ -49,9 +48,9 @@ const About = () => {
           <div className="mt-10">
             <p className="text-xl leading-9">
               Our extreme dedication to customer satisfaction and our utmost
-              care for the authenticity of our products have earned Tapee the
-              recognition as <b> "The Most Trusted E-commerce Shop Of India"</b>{" "}
-              and we proudly flaunt it!
+              care for the authenticity of our products have earned E-shop the
+              recognition as <b> "The Most Trusted E-Shop Of India"</b> and we
+              proudly flaunt it!
             </p>
           </div>
         </div>

@@ -33,12 +33,12 @@ const Sidebar = () => {
 
       <div>
         {cart.length === 0 ? (
-          <p className="text-xl text-center mt-10 text-red-600">Your cart is empty. </p>
-          
+          <p className="text-xl text-center mt-10 text-red-600">
+            Your cart is empty.{" "}
+          </p>
         ) : (
           <div>
             <p>You have items in your cart!</p>
-           
           </div>
         )}
       </div>
@@ -50,24 +50,21 @@ const Sidebar = () => {
       </div>
       <div className=" flex flex-col gap-y-2 py-4 mt-4 ">
         <div className="flex w-full justify-between items-center">
-         {cart.length > 0 && (
-          <div className="uppercase font-semibold">
-
-            <span className="mr-2">Total:</span>$ {parseFloat(total).toFixed(2)}
-          </div>
-          
+          {cart.length > 0 && (
+            <div className="uppercase font-semibold">
+              <span className="mr-2">Total:</span>${" "}
+              {parseFloat(total).toFixed(2)}
+            </div>
           )}
 
           {cart.length > 0 && (
-          <div
-            onClick={clearCart}
-            className="cursor-pointer py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl"
-          >
-            <FiTrash2 />
-
-          </div>
+            <div
+              onClick={clearCart}
+              className="cursor-pointer py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl"
+            >
+              <FiTrash2 />
+            </div>
           )}
-          
         </div>
       </div>
     </div>

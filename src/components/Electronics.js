@@ -6,7 +6,7 @@ import { CartContext } from "../contexts/CartContext";
 
 const Electronics = ({ product }) => {
   const { id, image, price, title, category } = product;
-  const {addToCart} = useContext(CartContext)
+  const { addToCart } = useContext(CartContext);
 
   return (
     <>
@@ -24,7 +24,10 @@ const Electronics = ({ product }) => {
           <div className="absolute top-6 -right-11 group-hover:right-5   p-2 flex flex-col items-center justify-center gap-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
             <button onClick={() => addToCart(product, id)}>
               <div className="flex justify-center items-center text-white w-12 h-12 bg-red-500">
-                <BsPlus className="text-3xl" onClick={()=>window.alert("Your Item Is Cart")}/>
+                <BsPlus
+                  className="text-3xl"
+                  onClick={() => window.alert("Your Item Is Cart")}
+                />
               </div>
             </button>
             <Link
@@ -41,7 +44,7 @@ const Electronics = ({ product }) => {
             <h2 className="font-semibold mb-1 ">{title}</h2>
           </Link>
 
-          <h2 className="font-semibold text-red-500 ">${price}</h2>
+          <h2 className="font-bold text-xl text-red-500 ">${price}</h2>
         </div>
       </div>
     </>

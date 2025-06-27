@@ -8,8 +8,6 @@ const ProductDetails = () => {
   const { products } = useContext(ProductContext);
   const { addToCart } = useContext(CartContext);
 
-
-
   const product = products.find((item) => {
     return item.id === parseInt(id);
   });
@@ -26,18 +24,18 @@ const ProductDetails = () => {
   return (
     <section className="pt-32 pb-12 lg:py-32 h-screen-[443px] items-center">
       <div className="conatiner mx-auto">
-        <div className="flex flex-col lg:flex-row items-center ">
+        <div className="flex flex-col lg:flex-row  ">
           <div className="flex flex-1 justify-center items-center mb-8 lg:mb-0">
             <img src={image} className="max-w-[200px] lg:max-w-sm" />
           </div>
           <div className="flex-1 text-center lg:text-left ">
-            <h1 className="text-[26px] font-medium mb-2 max-w-[450px] mx-auto lg:mx-0">
+            <h1 className="text-[30px] font-medium mb-2 max-w-[450px] mx-auto lg:mx-0">
               {title}
             </h1>
-            <div className="text-xl text-red-500 font-medium mb-6">
+            <div className="text-2xl text-red-500 font-bold mb-6">
               $ {price}
             </div>
-            <p className="mb-8 pr-6">{description}</p>
+            <p className="mb-8 pr-6 leading-7">{description}</p>
             <div onClick={() => window.alert("Your Item Is Cart")}>
               <button
                 onClick={() => addToCart(product, product.id)}
@@ -47,13 +45,6 @@ const ProductDetails = () => {
               </button>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="container mx-auto">
-        <div className="mt-20">
-          <h1>Releted Product</h1>
-          
         </div>
       </div>
     </section>

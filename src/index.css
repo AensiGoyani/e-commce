@@ -16,3 +16,20 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+/* .slick-prev:before,
+.slick-next:before {
+  color: black !important;
+  font-size: 30px !important;
+  background: transparent !important;
+
+}
+
+.slick-prev,
+.slick-next {
+  background: transparent !important;
+  top: 40% !important
+} */

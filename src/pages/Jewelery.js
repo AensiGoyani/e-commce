@@ -4,18 +4,13 @@ import { ProductContext } from "../contexts/ProductContext";
 import Jewelerys from "../components/Jewelerys";
 
 const Jewelery = () => {
-
-const { products } = useContext(ProductContext);
+  const { products } = useContext(ProductContext);
 
   const filteredProducts = products.filter((item) => {
-    return (
-      item.category === "jewelery" 
-    );
+    return item.category === "jewelery";
   });
 
-
-
-      return (
+  return (
     <div>
       {/* <Hero /> */}
       <section className="py-16 mt-20">
@@ -35,6 +30,6 @@ const { products } = useContext(ProductContext);
       </section>
     </div>
   );
-    };
+};
 
 export default Jewelery;
