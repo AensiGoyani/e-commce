@@ -1,11 +1,6 @@
 import React, { useContext } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
 import { ProductContext } from "../contexts/ProductContext";
-
-
 import Product from "../components/Product";
 import Hero from "../components/Hero";
 import Menimage from "../image/mens.jpg";
@@ -14,7 +9,6 @@ import Free from "../image/free.png";
 import Earth from "../image/earth.png";
 import Secure from "../image/secure.png";
 import { Link } from "react-router-dom";
-import Categories from "../components/Categories";
 
 const Home = () => {
   const { products } = useContext(ProductContext);
@@ -124,24 +118,19 @@ const Home = () => {
       <section className="bg-white py-8 mt-5 max-md:py-0 max-md:mt-4">
         <div className="container mx-auto  ">
           <div>
-            <div className="text-center mb-6 text-[30px] capitalize font-bold leading-[1.4] tracking-wider text-red-600">
+            <div className=" mb-6 text-[30px] capitalize font-bold leading-[1.4] tracking-wider ">
               <h1>best sale</h1>
             </div>
             <div className="">
               <Slider {...trend} className=" mx-auto">
                 {[3, 5, 19, 9, 17, 6, 3, 2, 7].map((index) => (
-                  <div key={index} className="p-4">
-                    {/* <div
-                      className="grid grid-cols-1 w-[900px] md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-3 gap-[30px]
-                  max-w-sm mx-auto md:max-w-none md:mx-0 relative "
-                    > */}
+                  <div key={index} className="p-9 pl-0 pt-0">
                     {filteredProducts
                       ?.slice(index, index + 1)
                       .map((product) => (
                         <Product product={product} key={product.id} />
                       ))}
                   </div>
-                  // </div>
                 ))}
               </Slider>
             </div>

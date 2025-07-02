@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { BsPlus, BsEyeFill , BsBag } from "react-icons/bs";
+
+import { BsPlus, BsEyeFill, BsBag } from "react-icons/bs";
 import { CartContext } from "../contexts/CartContext";
 
-const Categories = () => {
+const Categories = ({}) => {
   const { categoryName } = useParams();
   const [products, setProducts] = useState([]);
   const { addToCart } = useContext(CartContext);
@@ -12,6 +13,11 @@ const Categories = () => {
   const [visibleCount, setVisibleCount] = useState(4);
   const [showAll, setShowAll] = useState(false);
 
+  useEffect(() => {
+    fetch(`https://fakestoreapi.com/products/category/${categoryName}`)
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, [categoryName]);
 
   const toggleShowMore = () => {
     if (showAll) {
@@ -33,18 +39,12 @@ const Categories = () => {
     }, 1000);
   };
 
-  useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/category/${categoryName}`)
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, [categoryName]);
-
   return (
     <div className="py-16 mt-12">
       <div className="container mx-auto max-md:px-4">
         {showAlert && (
           <div className="mt-4 px-4 py-3 flex items-center gap-4  bg-green-100 text-green-800 border border-green-300 rounded mb-3">
-            <BsBag/> Product added to cart!
+            <BsBag /> Product added to cart!
           </div>
         )}
         <h1 className="text-center mb-6 text-[35px] uppercase font-semibold leading-[1.4] tracking-wider">
@@ -113,10 +113,6 @@ const Categories = () => {
           </div>
         )}
       </div>
-      {/* Nested ProductPage */}
-      {/* <Routes>
-        <Route path="/products/:productId" element={<ProductDetails />} />
-      </Routes> */}
     </div>
   );
 };
