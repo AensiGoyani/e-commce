@@ -3,10 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
 import ProductDetails from "./pages/ProductDetails";
-import Mens from "./pages/Men";
-import Womens from "./pages/Women";
-import Jewelery from "./pages/Jewelery";
-import Electronic from "./pages/Electronic";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
@@ -15,28 +11,37 @@ import Policy from "./pages/Policy";
 import Slidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Categories from "./components/Categories";
+import Cart from "./pages/Cart"
+import Cart1 from "./components/Cart1";
+// import Login  from "./components/Login";
+
+
 
 const App = () => {
   return (
     <div className="overflow-hidden">
+      
       <Router>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+           <Route path="/category/:categoryName" element={<Categories />} />
           <Route path="/product/:id" element={<ProductDetails />} />
-          <Route path="/men" element={<Mens />} />
-          <Route path="/women" element={<Womens />} />
-          <Route path="/jewelery" element={<Jewelery />} />
-          <Route path="/electronic" element={<Electronic />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/policy" element={<Policy />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart1" element={<Cart1/>}/>
+          {/* <Route path="/login" element={<Login/>}/> */}
         </Routes>
         <Slidebar />
         <Footer />
       </Router>
+     
     </div>
+    
   );
 };
 

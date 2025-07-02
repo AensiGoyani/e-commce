@@ -5,6 +5,7 @@ import { BsBag } from "react-icons/bs";
 import Logo from "../image/logo.png";
 import { Link, Links } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { FaBars } from "react-icons/fa";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -20,28 +21,33 @@ const Header = () => {
   return (
     <header
       className={`${
-        isActive ? "bg-white py-4 shadow-md" : "bg-none py-6"
+        isActive ? "bg-white py-4 shadow-md " : "bg-none py-6 max-md:py-2"
       } fixed w-full z-10 transition-all`}
     >
-      <div className="container mx-auto flex items-center justify-between h-full">
-        <Link to={"/"}>
-          <div className="flex items-center " title="Home">
-            <img className="w-[40px]" src={Logo} />
-            <span className="pl-4 uppercase text-2xl tracking-widest">
-              e-shop
-            </span>
+      <div className="container mx-auto flex items-center justify-between h-full max-md:px-4  ">
+        
+          <Link to={"/"}>
+            <div className="flex items-center " title="Home">
+              <img className="w-[40px]" src={Logo} />
+              <span className="pl-4 uppercase text-2xl tracking-widest">
+                e-shop
+              </span>
+            </div>
+          </Link>
+          <Navbar />
+          
+          
+          <div
+            onClick={() => setisOpen(!isOpen)}
+            className="cursor-pointer flex relative"
+          >
+            <BsBag className="text-2xl" />
+            <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
+              {itemAmount}
+            </div>
           </div>
-        </Link>
-        <Navbar />
-        <div
-          onClick={() => setisOpen(!isOpen)}
-          className="cursor-pointer flex relative"
-        >
-          <BsBag className="text-2xl" />
-          <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
-            {itemAmount}
-          </div>
-        </div>
+          
+        
       </div>
     </header>
   );

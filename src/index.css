@@ -28,8 +28,21 @@ code {
 
 }
 
+
+
 .slick-prev,
 .slick-next {
   background: transparent !important;
   top: 40% !important
 } */
+
+.slick-prev,
+.slick-next {
+ display: none !important;
+} 
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

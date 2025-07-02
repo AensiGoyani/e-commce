@@ -4,9 +4,9 @@ import WomanImg from "../image/women.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import Banner1 from "../image/banner1.jpg";
-import Banner2 from "../image/banner2.jpg";
-import Banner3 from "../image/banner3.jpg";
+import Banner1 from "../image/banner5.jpg";
+import Banner2 from "../image/banner4.jpg";
+import Banner3 from "../image/banner6.jpg";
 
 const Hero = () => {
   const banners = {
@@ -21,21 +21,21 @@ const Hero = () => {
     // cssEase: "linear"
   };
   return (
-    <section className="py-24 px-0 h-[600px]">
-      <div className="container mx-auto">
+    <section className="py-20 px-0 max-md:py-15 ">
+      <div className="container mx-auto ">
         <Slider {...banners}>
           <div className=" relative ">
             <div>
-              <img src={Banner1} className="" />
+              <img src={Banner1} className="max-md:h-[300px]" />
             </div>
             <div className=" absolute right-[40%] top-[20%] left-[10%]">
               <div className="font-semibold flex items-center uppercase tracking-widest ">
                 <div className=" w-10 h-[2px] bg-red-500 mr-3"></div>New Trend
               </div>
-              <h1 className="text-[65px] leading-[1.4] font-light mb-4 tracking-wider">
+              <h1 className="text-[65px] leading-[1.4] font-light mb-4 tracking-wider max-md:text-[20px] max-md:leading-[40px]">
                 E-SHOP SALE STYLES <span className="font-semibold">MEN'S</span>
               </h1>
-              <button className="bg-black text-white py-3 px-5 rounded-full hover:bg-transparent hover:text-black hover:border border-black tracking-wider leading-5">
+              <button className="bg-black text-white py-3 px-5 rounded-full hover:bg-transparent hover:text-black hover:border border-black tracking-wider leading-5 max-md:py-2 ">
                 <Link
                   to={"/men"}
                   className="self-start uppercase font-semibold  border-black"
@@ -48,17 +48,17 @@ const Hero = () => {
 
           <div className=" relative">
             <div>
-              <img src={Banner2} className="" />
+              <img src={Banner2} className="max-md:h-[300px]" />
             </div>
             <div className=" absolute right-[40%] top-[20%] left-[10%]">
               <div className="font-semibold flex items-center uppercase tracking-widest ">
                 <div className=" w-10 h-[2px] bg-red-500 mr-3"></div>New Trend
               </div>
-              <h1 className="text-[65px] leading-[1.4] font-light mb-4 tracking-wider">
+              <h1 className="text-[65px] leading-[1.4] font-light mb-4 tracking-wider max-md:text-[20px] max-md:leading-[40px]">
                 E-SHOP SALE STYLES{" "}
                 <span className="font-semibold">WOMEN'S</span>
               </h1>
-              <button className="bg-black text-white py-3 px-5 rounded-full hover:bg-transparent hover:text-black hover:border border-black tracking-wider leading-5">
+              <button className="bg-black text-white py-3 px-5 rounded-full hover:bg-transparent hover:text-black hover:border border-black tracking-wider leading-5 max-md:py-2">
                 <Link
                   to={"/women"}
                   className="self-start uppercase font-semibold   border-black"
@@ -71,17 +71,17 @@ const Hero = () => {
 
           <div className=" relative">
             <div>
-              <img src={Banner3} className="w-[1700px] h-[513px]" />
+              <img src={Banner3} className="w-[1700px] max-md:h-[300px]" />
             </div>
             <div className=" absolute right-[40%] top-[20%] left-[10%] ">
               <div className="font-semibold flex items-center uppercase tracking-widest ">
                 <div className=" w-10 h-[2px] bg-red-500 mr-3"></div>sale
               </div>
-              <h1 className="text-[65px] leading-[1.4] font-light mb-4 tracking-wider uppercase ">
+              <h1 className="text-[65px] leading-[1.4] font-light mb-4 tracking-wider uppercase max-md:text-[17px] max-md:leading-[40px]">
                 get up to 30% off{" "}
                 <span className="font-semibold uppercase">electronics</span>
               </h1>
-              <button className="bg-black text-white py-3 px-5 rounded-full hover:bg-transparent hover:text-black hover:border border-black tracking-wider leading-5">
+              <button className="bg-black text-white py-3 px-5 rounded-full hover:bg-transparent hover:text-black hover:border border-black tracking-wider leading-5 max-md:py-2">
                 <Link
                   to={"/electronic"}
                   className="self-start uppercase font-semibold "

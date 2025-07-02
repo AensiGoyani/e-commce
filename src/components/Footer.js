@@ -2,7 +2,6 @@ import React from "react";
 import {
   BiLocationPlus,
   BiPhoneCall,
-  BiLogoFacebookSquare,
 } from "react-icons/bi";
 import { BiEnvelope } from "react-icons/bi";
 import { Link } from "react-router-dom";
@@ -12,10 +11,10 @@ import { FaPinterestP } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="">
+    <footer className="max-md:mt-5">
       <section className="bg-black py-12">
-        <div className="container mx-auto">
-          <div className="flex justify-between  ">
+        <div className="container mx-auto max-md:px-4">
+          <div className="flex justify-between  max-md:block max-lg:block">
             <div>
               <h1 className="text-white text-[28px] font-medium mb-3 capitalize">
                 Shop
@@ -38,7 +37,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div>
+            <div className="max-md:mt-3 max-md:lg:mt-5">
               <h1 className="text-white text-[28px] font-medium mb-3  capitalize">
                 customer services
               </h1>
@@ -52,7 +51,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div>
+            <div className="max-md:mt-3 max-md:lg:mt-3">
               <h1 className="text-white text-[28px] font-medium mb-3  capitalize">
                 information
               </h1>
@@ -66,7 +65,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div>
+            <div className="max-md:mt-3 max-md:lg:mt-3">
               <h1 className="text-white text-[28px] font-medium mb-3 capitalize">
                 Address
               </h1>
@@ -106,8 +105,8 @@ const Footer = () => {
         </div>
       </section>
       <section className=" bg-black">
-        <div className="container mx-auto py-10 border-t-2 border-white">
-          <div className="flex justify-between items-center">
+        <div className="container mx-auto py-10 border-t-2 border-white max-md:px-4">
+          <div className="flex justify-between items-center max-md:block">
             <p className="text-white text-xl">
               Copyright &copy;{" "}
               <Link to={"/"}>
@@ -115,7 +114,7 @@ const Footer = () => {
               </Link>{" "}
               2025. All rights reserved.
             </p>
-            <div className="flex gap-10">
+            <div className="flex gap-10 max-md:mt-3">
               <FaFacebookF className="text-white text-[30px] bg-blue-700 rounded-full w-9 h-9 py-1" />
               <BsInstagram className="text-white text-[25px] bg-red-800 rounded-full w-10 h-9 py-1 " />
               <FaPinterestP className="text-white text-[30px] bg-red-600 rounded-full w-9 h-9 py-1" />

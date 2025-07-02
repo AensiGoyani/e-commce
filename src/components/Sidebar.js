@@ -1,23 +1,51 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useEffect, useRef, useContext } from "react";
+import { SidebarContext } from "../contexts/SidebarContext";
 import { Link } from "react-router-dom";
 
 import { IoMdArrowForward } from "react-icons/io";
 import { FiTrash2 } from "react-icons/fi";
 
 import CartItem from "../components/CartItem";
-import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
 
 const Sidebar = () => {
-  const { isOpen, handleClose } = useContext(SidebarContext);
   const { cart, clearCart, total, itemAmount } = useContext(CartContext);
+  const { isOpen, handleClose } = useContext(SidebarContext);
+  const sidebarRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        handleClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, handleClose]);
+
+  if (!isOpen) return null;
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Escape") {
+      handleClose();
+    }
+  };
+
+  if (isOpen) {
+    document.addEventListener("keydown", handleKeyDown);
+  }
 
   return (
     <div
-      className={`${isOpen ? "right-0" : "-right-full"}
-    w-full bg-white fixed top-0 h-full shadow-2xl md:w-[30vw]
-    transition-all duration-300 z-20 px-4 lg:px-[35px] justify-between
-    `}
+      ref={sidebarRef}
+      className=" w-full bg-white fixed top-0  h-full shadow-2xl md:w-[30vw]
+    transition-all duration-300 z-20 px-4 lg:px-[35px] justify-between right-0 "
     >
       <div className="flex items-center justify-between py-6 border-b">
         <div className="uppercase text-sm font-semibold">
@@ -43,12 +71,13 @@ const Sidebar = () => {
         )}
       </div>
 
-      <div className="flex flex-col gap-y-2 h-[350px] lg:h-[350px] overflow-y-auto overflow-x-hidden border-b ">
+      <div className="flex flex-col   gap-y-2 h-[350px]  overflow-y-auto overflow-x-hidden border-b  ">
         {cart.map((item) => {
           return <CartItem item={item} key={item.id} />;
         })}
       </div>
-      <div className=" flex flex-col gap-y-2 py-4 mt-4 ">
+
+      <div className=" flex flex-col gap-y-2 py-4 mt-3 ">
         <div className="flex w-full justify-between items-center">
           {cart.length > 0 && (
             <div className="uppercase font-semibold">
@@ -65,6 +94,12 @@ const Sidebar = () => {
               <FiTrash2 />
             </div>
           )}
+        </div>
+
+        <div className="text-center mt-3 border border-red-500 py-3">
+          <button>
+            <Link to="/cart">View Cart</Link>
+          </button>
         </div>
       </div>
     </div>
