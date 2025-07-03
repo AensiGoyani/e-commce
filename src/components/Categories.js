@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import { BsPlus, BsEyeFill, BsBag } from "react-icons/bs";
+import { BsPlus, BsEyeFill, BsBag, BsStar } from "react-icons/bs";
 import { CartContext } from "../contexts/CartContext";
 
 const Categories = ({}) => {
@@ -93,7 +93,8 @@ const Categories = ({}) => {
                 <Link to={`/product/${products.id}`}>
                   <h2 className="font-semibold mb-1 ">{products.title}</h2>
                 </Link>
-
+               
+                
                 <h2 className="font-bold text-xl text-red-500 ">
                   ${products.price}
                 </h2>

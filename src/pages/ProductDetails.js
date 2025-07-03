@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
 import { ProductContext } from "../contexts/ProductContext";
-import { BsBag } from "react-icons/bs";
+import { BsBag, BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -32,7 +32,26 @@ const ProductDetails = () => {
     );
   }
 
-  const { title, price, description, image, category } = product;
+  const renderStars = (rate) => {
+    const stars = [];
+    const fullStars = Math.floor(rate);
+    const hasHalfStar = rate - fullStars >= 0.5;
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(<BsStarFill key={"full" + i} className="text-yellow-500" />);
+    }
+    if (hasHalfStar) {
+      stars.push(<BsStarHalf key="half" className="text-yellow-500" />);
+    }
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(<BsStar key={"empty" + i} className="text-yellow-500" />);
+    }
+
+    return stars;
+  };
+
+  const { title, price, description, image, category, rating } = product;
 
   return (
     <section className="pt-32 pb-12 lg:py-32 h-screen-[443px] items-center">
@@ -56,11 +75,16 @@ const ProductDetails = () => {
             <h1 className="text-[30px] font-medium mb-2 max-w-[590px] mx-auto lg:mx-0">
               {title}
             </h1>
-            <div className="text-2xl text-red-500 font-bold mb-6">
+            <div className="text-2xl text-red-500 font-bold mb-2">
               $ {price}
             </div>
+            <h2 className="flex items-center font-normal text-xl text-black  gap-2 mb-6 ">
+              Rating: {rating && rating.rate}{" "}
+              <span className="flex gap-1 ml-2">
+                {renderStars(rating.rate)}
+              </span>
+            </h2>
             <p className="mb-8 pr-6 leading-7 max-w-[590px]">{description}</p>
-
             <div>
               <div onClick={handleAddToCart}>
                 <button

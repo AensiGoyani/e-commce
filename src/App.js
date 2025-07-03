@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
 
 import Home from "./pages/Home";
 import ProductDetails from "./pages/ProductDetails";
@@ -14,14 +14,13 @@ import Footer from "./components/Footer";
 import Categories from "./components/Categories";
 import Cart from "./pages/Cart"
 import Cart1 from "./components/Cart1";
-// import Login  from "./components/Login";
+import Login  from "./components/Login";
 
 
 
 const App = () => {
   return (
     <div className="overflow-hidden">
-      
       <Router>
         <Header />
         <Routes>
@@ -34,12 +33,11 @@ const App = () => {
           <Route path="/policy" element={<Policy />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/cart1" element={<Cart1/>}/>
-          {/* <Route path="/login" element={<Login/>}/> */}
+          <Route path="/login" element={<Login/>}/>
         </Routes>
         <Slidebar />
         <Footer />
       </Router>
-     
     </div>
     
   );

@@ -96,11 +96,11 @@ const Sidebar = () => {
           )}
         </div>
 
-        <div className="text-center mt-3 border border-red-500 py-3">
-          <button>
-            <Link to="/cart">View Cart</Link>
-          </button>
-        </div>
+        <Link to="/cart">
+          <div className="text-center mt-3 border border-red-500 py-3">
+            <button>View Cart</button>
+          </div>
+        </Link>
       </div>
     </div>
   );

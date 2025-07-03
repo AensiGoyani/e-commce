@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 
 const Login = () => {
@@ -37,29 +36,32 @@ const Login = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="p-[93px] max-w-md mx-auto">
-        <h2 className="text-2xl font-bold mb-4">Login</h2>
-        <form onSubmit={handleLogin} className="flex flex-col gap-4">
+      <div className=" max-w-md mx-auto mt-32 mb-7  border border-gray-500 py-9 px-9 rounded-2xl">
+        <h2 className="text-2xl font-bold  text-center mb-5">Login</h2>
+        <form onSubmit={handleLogin} className="flex flex-col gap-10">
           <input
             type="text"
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="border p-2"
+            className="border border-gray-400 rounded-2xl p-4 "
           />
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="border p-2"
+            className="border border-gray-400 rounded-2xl p-4 "
           />
-          <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+          <button
+            type="submit"
+            className="bg-blue-500 text-white p-4 rounded-xl"
+          >
             Login
           </button>
         </form>
         {token && (
-          <div className="mt-4 text-green-600">
+          <div className="mt-4 text-green-600 ">
             <strong>Token:</strong> {token}
           </div>
         )}

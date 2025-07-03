@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BsPlus, BsEyeFill } from "react-icons/bs";
 import { CartContext } from "../contexts/CartContext";
+import Categories from './Categories'
 
 const Product = ({ product }) => {
   const { addToCart } = useContext(CartContext);
@@ -9,7 +10,6 @@ const Product = ({ product }) => {
   const { id, image, category, title, price } = product;
 
   return (
-    
     <div className="">
       <div className="border border-[#a79b9b] h-[300px] mb-4 relative  overflow-hidden group transition:">
         <div className="w-full h-full flex justify-center items-center">
@@ -38,6 +38,7 @@ const Product = ({ product }) => {
           </Link>
         </div>
       </div>
+
       <div>
         <div className="text-sm capitalize text-gray-500">{category}</div>
         <Link to={`/product/${id}`}>
