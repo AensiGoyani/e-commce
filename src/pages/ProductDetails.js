@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
 import { ProductContext } from "../contexts/ProductContext";
 import { BsBag, BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -86,13 +87,15 @@ const ProductDetails = () => {
             </h2>
             <p className="mb-8 pr-6 leading-7 max-w-[590px]">{description}</p>
             <div>
-              <div onClick={handleAddToCart}>
-                <button
-                  onClick={() => addToCart(product, product.id)}
-                  className="bg-black text-white py-4 px-8"
-                >
-                  Add to cart
-                </button>
+              <div>
+                <Link onClick={handleAddToCart}>
+                  <button
+                    onClick={() => addToCart(product, product.id)}
+                    className="bg-black text-white py-4 px-8"
+                  >
+                    Add to cart
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

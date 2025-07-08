@@ -37,7 +37,7 @@ const Hero = () => {
               </h1>
               <button className="bg-black text-white py-3 px-5 rounded-full hover:bg-transparent hover:text-black hover:border border-black tracking-wider leading-5 max-md:py-2 ">
                 <Link
-                  to={"/men"}
+                  to={"/category/men's clothing"}
                   className="self-start uppercase font-semibold  border-black"
                 >
                   Show More
@@ -60,7 +60,7 @@ const Hero = () => {
               </h1>
               <button className="bg-black text-white py-3 px-5 rounded-full hover:bg-transparent hover:text-black hover:border border-black tracking-wider leading-5 max-md:py-2">
                 <Link
-                  to={"/women"}
+                  to={"/category/women's clothing"}
                   className="self-start uppercase font-semibold   border-black"
                 >
                   View All
@@ -83,7 +83,7 @@ const Hero = () => {
               </h1>
               <button className="bg-black text-white py-3 px-5 rounded-full hover:bg-transparent hover:text-black hover:border border-black tracking-wider leading-5 max-md:py-2">
                 <Link
-                  to={"/electronic"}
+                  to={"/category/electronics"}
                   className="self-start uppercase font-semibold "
                 >
                   Shop Now

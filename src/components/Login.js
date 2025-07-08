@@ -1,72 +1,67 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [username, setUsername] = useState("mor_2314");
-  const [password, setPassword] = useState("83r5^_");
-  const [token, setToken] = useState("");
+  const [formData, setFormData] = useState({ username: "mor_2314", password: "83r5^_" });
   const [error, setError] = useState("");
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
 
     try {
       const res = await fetch("https://fakestoreapi.com/auth/login", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username,
-          password,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
-      if (!res.ok) {
-        throw new Error("Invalid credentials");
-      }
-
       const data = await res.json();
-      setToken(data.token);
-      setError("");
-    } catch (err) {
-      setError(err.message);
-      setToken("");
+
+      if (res.ok) {
+        login(formData.username, data.token);
+        navigate("/"); 
+      } else {
+        setError("Invalid credentials.");
+      }
+    } catch {
+      setError("Login failed. Try again.");
     }
   };
 
   return (
-    <div className="container mx-auto">
-      <div className=" max-w-md mx-auto mt-32 mb-7  border border-gray-500 py-9 px-9 rounded-2xl">
-        <h2 className="text-2xl font-bold  text-center mb-5">Login</h2>
-        <form onSubmit={handleLogin} className="flex flex-col gap-10">
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="border border-gray-400 rounded-2xl p-4 "
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="border border-gray-400 rounded-2xl p-4 "
-          />
-          <button
-            type="submit"
-            className="bg-blue-500 text-white p-4 rounded-xl"
-          >
-            Login
-          </button>
-        </form>
-        {token && (
-          <div className="mt-4 text-green-600 ">
-            <strong>Token:</strong> {token}
-          </div>
-        )}
-        {error && <div className="mt-4 text-red-600">{error}</div>}
-      </div>
+    <div className="flex justify-center items-center min-h-screen ">
+      <form onSubmit={handleSubmit} className="bg-white border-gray-500 border p-8 rounded-lg shadow w-[300px]">
+        <h2 className="text-xl font-semibold mb-4">Login</h2>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          required
+          value={formData.username}
+          onChange={handleChange}
+          className="w-full border p-2 mb-4 rounded border-gray-500"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+          value={formData.password}
+          onChange={handleChange}
+          className="w-full border p-2 mb-4 rounded border-gray-500"
+        />
+        <button type="submit" className="bg-blue-600 text-white p-2 w-full rounded">
+          Login
+        </button>
+        {error && <p className="text-red-600 mt-2 text-sm">{error}</p>}
+      </form>
     </div>
   );
 };

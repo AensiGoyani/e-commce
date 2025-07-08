@@ -5,7 +5,7 @@ import App from "./App";
 import ProductProvider from "./contexts/ProductContext";
 import SidebarProvider from "./contexts/SidebarContext";
 import CartProvider from "./contexts/CartContext";
-
+import AuthContextProvider from "./contexts/AuthContext";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -13,11 +13,11 @@ root.render(
   <SidebarProvider>
     <CartProvider>
       <ProductProvider>
-        
+        <AuthContextProvider>
           <React.StrictMode>
             <App />
           </React.StrictMode>
-        
+        </AuthContextProvider>
       </ProductProvider>
     </CartProvider>
   </SidebarProvider>

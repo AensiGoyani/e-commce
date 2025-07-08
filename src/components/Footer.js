@@ -24,16 +24,16 @@ const Footer = () => {
                   <Link to={"/"}>Home</Link>
                 </li>
                 <li className="hover:text-red-500">
-                  <Link to={"/men"}>men's cloth</Link>
+                  <Link to={"/category/men's clothing"}>men's cloth</Link>
                 </li>
                 <li className="hover:text-red-500">
-                  <Link to={"/women"}>women's cloth </Link>{" "}
+                  <Link to={"/category/women's clothing"}>women's cloth </Link>{" "}
                 </li>
                 <li className="hover:text-red-500">
-                  <Link to={"/jewelery"}> jewelwry</Link>
+                  <Link to={"/category/jewelery"}> jewelery</Link>
                 </li>
                 <li className="hover:text-red-500">
-                  <Link to={"/electronic"}>electronics</Link>
+                  <Link to={"/category/electronics"}>electronics</Link>
                 </li>
               </ul>
             </div>

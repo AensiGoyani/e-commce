@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import { BsPlus, BsEyeFill, BsBag, BsStar } from "react-icons/bs";
+import { BsPlus, BsEyeFill, BsBag } from "react-icons/bs";
 import { CartContext } from "../contexts/CartContext";
 
 const Categories = ({}) => {

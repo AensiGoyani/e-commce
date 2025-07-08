@@ -77,6 +77,12 @@ const Home = () => {
       <div className="">
         <Hero />
       </div>
+
+
+
+
+
+      
       <section className="">
         <div className="container mx-auto max-md:px-4">
           <div className="">
@@ -124,7 +130,7 @@ const Home = () => {
             </div>
             <div className="">
               <Slider {...trend} className=" mx-auto">
-                {[3, 5, 19, 9, 17, 6, 3, 2, 7].map((index) => (
+                {[3, 13, 5, 19, 9, 17, 6, 2, 7, 16, 4, 12].map((index) => (
                   <div key={index} className="p-9 pl-0 pt-0">
                     {filteredProducts
                       ?.slice(index, index + 1)
@@ -146,7 +152,7 @@ const Home = () => {
               Best of Electronics
             </h1>
             <p className="text-[20px] capitalize  leading-[1.4] tracking-wider underline hover:text-red-500 max-md:text-[17px]">
-              <Link to={"/electronic"}> View all </Link>
+              <Link to={"/category/electronics"}> View all </Link>
             </p>
           </div>
 
@@ -176,8 +182,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-10 max-md:py-0">
-        <div className="container mx-auto px-4 max-md:max-w-[650px] max-md:px-4">
+      <section className="py-14 max-md:py-0">
+        <div className="container mx-auto  max-md:max-w-[650px] max-md:px-4">
           <div className="flex flex-wrap justify-between gap-6">
             <div className="flex gap-6 cursor-pointer border-2 border-gray-300 rounded-xl py-9 px-8 w-full md:w-[30%]">
               <div className="w-[60px]">

@@ -1,9 +1,12 @@
+
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { IoMdAdd, IoMdClose, IoMdRemove } from "react-icons/io";
 import { CartContext } from "../contexts/CartContext";
+import { AuthContext } from "../contexts/AuthContext";
 
 const CartItem = ({ item }) => {
+  
   const { removeFromCart, increaseAmount, decreaseAmount } =
     useContext(CartContext);
   const { id, title, image, price, amount } = item;
@@ -19,7 +22,7 @@ const CartItem = ({ item }) => {
               <Link
                 to={`/product/${id}`}
                 className="text-sm uppercase
-             font-medium max-w[240px] text-black hover:underline"
+             font-medium max-w[240px] text-black hover:underline "
               >
                 {title}
               </Link>
@@ -64,3 +67,7 @@ const CartItem = ({ item }) => {
 };
 
 export default CartItem;
+
+
+
+
