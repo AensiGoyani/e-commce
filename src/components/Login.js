@@ -3,7 +3,10 @@ import { AuthContext } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ username: "mor_2314", password: "83r5^_" });
+  const [formData, setFormData] = useState({
+    username: "mor_2314",
+    password: "83r5^_",
+  });
   const [error, setError] = useState("");
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -26,7 +29,7 @@ const Login = () => {
 
       if (res.ok) {
         login(formData.username, data.token);
-        navigate("/"); 
+        navigate("/");
       } else {
         setError("Invalid details.");
       }
@@ -37,7 +40,10 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen ">
-      <form onSubmit={handleSubmit} className="bg-white border-gray-500 border p-8 rounded-lg shadow w-[300px]">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white border-gray-500 border p-8 rounded-lg shadow w-[300px]"
+      >
         <h2 className="text-2xl font-bold mb-5 text-center">Login</h2>
         <input
           type="text"
@@ -57,7 +63,10 @@ const Login = () => {
           onChange={handleChange}
           className="w-full border p-2 mb-5 rounded border-gray-500"
         />
-        <button type="submit" className="bg-blue-600 text-white font-normal text-xl p-2 w-full rounded">
+        <button
+          type="submit"
+          className="bg-blue-600 text-white font-normal text-xl p-2 w-full rounded"
+        >
           Login
         </button>
         {error && <p className="text-red-600 mt-4 text-lg">{error}</p>}

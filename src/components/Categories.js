@@ -93,8 +93,7 @@ const Categories = ({}) => {
                 <Link to={`/product/${products.id}`}>
                   <h2 className="font-semibold mb-1 ">{products.title}</h2>
                 </Link>
-               
-                
+
                 <h2 className="font-bold text-xl text-red-500 ">
                   ${products.price}
                 </h2>

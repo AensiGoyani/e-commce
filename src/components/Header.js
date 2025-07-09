@@ -5,18 +5,16 @@ import { BsBag } from "react-icons/bs";
 import Logo from "../image/logo.png";
 import { Link, Links } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { FaBars, FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import { AuthContext } from "../contexts/AuthContext";
 
-
 const Header = () => {
-  const { user, logout  } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const toggleDropdown = () => setShowDropdown(!showDropdown);
   const [isActive, setIsActive] = useState(false);
   const { isOpen, setisOpen } = useContext(SidebarContext);
-  const { itemAmount , clearCart } = useContext(CartContext);
-  
+  const { itemAmount, clearCart } = useContext(CartContext);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -26,9 +24,9 @@ const Header = () => {
 
   const handleLogout = () => {
     alert("Are you Sure Logout!");
-  logout();
-  clearCart();
-};
+    logout();
+    clearCart();
+  };
 
   return (
     <header
@@ -48,14 +46,16 @@ const Header = () => {
         <Navbar />
 
         <div className="items-center flex  max-lg:flex max-lg:gap-2 max-md:pt-3">
-          <div className="relative" >
+          <div className="relative">
             {user ? (
               <div
                 className="flex items-center gap-4 top-3 cursor-pointer"
                 onClick={toggleDropdown}
               >
-                <span className="capitalize font-medium max-lg:hidden">{user}</span>
-                <FaUser className="max-lg:block hidden"/>
+                <span className="capitalize font-medium max-lg:hidden">
+                  {user}
+                </span>
+                <FaUser className="max-lg:block hidden" />
               </div>
             ) : (
               <Link to="/login" className="hover:underline">
@@ -69,12 +69,12 @@ const Header = () => {
                   <span className="font-semibold">Name: {user}</span>
                 </div>
                 <Link to="/login">
-                <button
-                  onClick={handleLogout}
-                  className="w-full text-left px-4 py-2 hover:bg-red-100 text-red-600"
-                >
-                  Logout
-                </button>
+                  <button
+                    onClick={handleLogout}
+                    className="w-full text-left px-4 py-2 hover:bg-red-100 text-red-600"
+                  >
+                    Logout
+                  </button>
                 </Link>
               </div>
             )}
@@ -90,8 +90,6 @@ const Header = () => {
               {itemAmount}
             </div>
           </div>
-
-          {/* <FaBars className="hidden max-lg:block" /> */}
         </div>
       </div>
     </header>

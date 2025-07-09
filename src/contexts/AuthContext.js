@@ -3,11 +3,11 @@ import React, { createContext, useState, useEffect } from "react";
 export const AuthContext = createContext();
 
 const userMap = {
-  "mor_2314": 1,
-  "johnd": 2,
-  "donero": 3,
-  "david_r": 4,
-  "miriam": 5,
+  mor_2314: 1,
+  johnd: 2,
+  donero: 3,
+  david_r: 4,
+  miriam: 5,
 };
 
 export const AuthProvider = ({ children }) => {
@@ -49,6 +49,5 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-
 
 export default AuthProvider;

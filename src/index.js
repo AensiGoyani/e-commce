@@ -7,7 +7,6 @@ import SidebarProvider from "./contexts/SidebarContext";
 import CartProvider from "./contexts/CartContext";
 import AuthContextProvider from "./contexts/AuthContext";
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <SidebarProvider>

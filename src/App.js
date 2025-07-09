@@ -12,10 +12,8 @@ import Slidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Categories from "./components/Categories";
-import Cart from "./pages/Cart"
-import Login  from "./components/Login";
-
-
+import Cart from "./pages/Cart";
+import Login from "./components/Login";
 
 const App = () => {
   return (
@@ -24,20 +22,19 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-           <Route path="/category/:categoryName" element={<Categories />} />
+          <Route path="/category/:categoryName" element={<Categories />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/policy" element={<Policy />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Slidebar />
         <Footer />
       </Router>
     </div>
-    
   );
 };
 

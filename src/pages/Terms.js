@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Termsimg from "../image/terms.jpg";
 
 const Terms = () => {

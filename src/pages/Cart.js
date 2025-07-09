@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useContext , useState } from "react";
+import React, { useEffect, useRef, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { SidebarContext } from "../contexts/SidebarContext";
 import { IoMdArrowForward } from "react-icons/io";
@@ -8,7 +8,6 @@ import CartItem from "../components/CartItem";
 import { CartContext } from "../contexts/CartContext";
 
 const Cart = () => {
-
   const { cart, clearCart, total, itemAmount } = useContext(CartContext);
   const { isOpen, handleClose } = useContext(SidebarContext);
   return (
@@ -27,12 +26,12 @@ const Cart = () => {
               Shopping Bag ({itemAmount})
             </div>
             <Link to="/">
-            <div
-              onClick={handleClose}
-              className="cursor-pointer w-8 h-8 flex justify-center items-center"
-            >
-              <IoMdArrowForward className="text-2xl" />
-            </div>
+              <div
+                onClick={handleClose}
+                className="cursor-pointer w-8 h-8 flex justify-center items-center"
+              >
+                <IoMdArrowForward className="text-2xl" />
+              </div>
             </Link>
           </div>
 
@@ -73,7 +72,6 @@ const Cart = () => {
               )}
             </div>
 
-          
             <div className="flex justify-center mt-4">
               <Link to="/category/electronics">
                 <button className="border bg-red-500 text-white text-xl font-semibold capitalize py-3 px-6 rounded-2xl hover:border-red-600 hover:bg-transparent hover:text-black">

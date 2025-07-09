@@ -25,7 +25,10 @@ const Hero = () => {
         <Slider {...banners}>
           <div className=" relative ">
             <div>
-              <img src={Banner1} className="max-md:h-[300px] max-lg:h-[450px]" />
+              <img
+                src={Banner1}
+                className="max-md:h-[300px] max-lg:h-[450px]"
+              />
             </div>
             <div className=" absolute right-[40%] top-[20%] left-[10%]">
               <div className="font-semibold flex items-center uppercase tracking-widest ">
@@ -47,7 +50,10 @@ const Hero = () => {
 
           <div className=" relative">
             <div>
-              <img src={Banner2} className="max-md:h-[300px] max-lg:h-[450px]" />
+              <img
+                src={Banner2}
+                className="max-md:h-[300px] max-lg:h-[450px]"
+              />
             </div>
             <div className=" absolute right-[40%] top-[20%] left-[10%]">
               <div className="font-semibold flex items-center uppercase tracking-widest ">
@@ -70,7 +76,10 @@ const Hero = () => {
 
           <div className=" relative">
             <div>
-              <img src={Banner3} className="w-[1700px] max-md:h-[300px] max-lg:h-[450px]" />
+              <img
+                src={Banner3}
+                className="w-[1700px] max-md:h-[300px] max-lg:h-[450px]"
+              />
             </div>
             <div className=" absolute right-[40%] top-[20%] left-[10%] ">
               <div className="font-semibold flex items-center uppercase tracking-widest ">

@@ -9,7 +9,7 @@ const About = () => {
         <div>
           <img src={Aboutus} className="w-[1700px] h-[400px]" />
         </div>
-        <div className="relative"> 
+        <div className="relative">
           <div className=" absolute right-[50%] -top-[70%] left-[10%] max-md:-top-[47%] max-md:right-[20%] max-sm:right-[0%] max-sm:-top-[25%] ">
             <h1 className="text-[50px] uppercase font-medium leading-5 tracking-widest text-center max-md:text-[40px] max-sm:text-[30px]">
               About us

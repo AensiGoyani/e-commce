@@ -9,7 +9,6 @@ import Free from "../image/free.png";
 import Earth from "../image/earth.png";
 import Secure from "../image/secure.png";
 import { Link } from "react-router-dom";
-import Categories from "../components/Categories";
 
 const Home = () => {
   const { products } = useContext(ProductContext);
@@ -78,11 +77,6 @@ const Home = () => {
         <Hero />
       </div>
 
-
-
-
-
-      
       <section className="">
         <div className="container mx-auto max-md:px-4">
           <div className="">

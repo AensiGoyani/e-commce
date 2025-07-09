@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  BiLocationPlus,
-  BiPhoneCall,
-} from "react-icons/bi";
+import { BiLocationPlus, BiPhoneCall } from "react-icons/bi";
 import { BiEnvelope } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { BsInstagram } from "react-icons/bs";
