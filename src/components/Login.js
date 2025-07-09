@@ -28,7 +28,7 @@ const Login = () => {
         login(formData.username, data.token);
         navigate("/"); 
       } else {
-        setError("Invalid credentials.");
+        setError("Invalid details.");
       }
     } catch {
       setError("Login failed. Try again.");
@@ -38,7 +38,7 @@ const Login = () => {
   return (
     <div className="flex justify-center items-center min-h-screen ">
       <form onSubmit={handleSubmit} className="bg-white border-gray-500 border p-8 rounded-lg shadow w-[300px]">
-        <h2 className="text-xl font-semibold mb-4">Login</h2>
+        <h2 className="text-2xl font-bold mb-5 text-center">Login</h2>
         <input
           type="text"
           name="username"
@@ -46,7 +46,7 @@ const Login = () => {
           required
           value={formData.username}
           onChange={handleChange}
-          className="w-full border p-2 mb-4 rounded border-gray-500"
+          className="w-full border p-2 mb-5 rounded border-gray-500"
         />
         <input
           type="password"
@@ -55,12 +55,12 @@ const Login = () => {
           required
           value={formData.password}
           onChange={handleChange}
-          className="w-full border p-2 mb-4 rounded border-gray-500"
+          className="w-full border p-2 mb-5 rounded border-gray-500"
         />
-        <button type="submit" className="bg-blue-600 text-white p-2 w-full rounded">
+        <button type="submit" className="bg-blue-600 text-white font-normal text-xl p-2 w-full rounded">
           Login
         </button>
-        {error && <p className="text-red-600 mt-2 text-sm">{error}</p>}
+        {error && <p className="text-red-600 mt-4 text-lg">{error}</p>}
       </form>
     </div>
   );

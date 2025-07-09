@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { IoMdAdd, IoMdClose, IoMdRemove } from "react-icons/io";
 import { CartContext } from "../contexts/CartContext";
-import { AuthContext } from "../contexts/AuthContext";
+
 
 const CartItem = ({ item }) => {
   

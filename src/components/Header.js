@@ -36,9 +36,9 @@ const Header = () => {
         isActive ? "bg-white py-4 shadow-md " : "bg-none py-6 max-md:py-2"
       } fixed w-full z-10 transition-all`}
     >
-      <div className="container mx-auto flex items-center justify-between h-full max-md:px-4 max-lg:justify-normal  ">
+      <div className="container mx-auto flex items-center justify-between h-full max-md:px-4 max-lg:items-start ">
         <Link to={"/"}>
-          <div className="flex items-center " title="Home">
+          <div className="flex items-center" title="Home">
             <img className="w-[40px]" src={Logo} />
             <span className="pl-4 uppercase text-2xl tracking-widest">
               e-shop
@@ -47,14 +47,15 @@ const Header = () => {
         </Link>
         <Navbar />
 
-        <div className="items-center flex  max-lg:flex max-lg:gap-8">
+        <div className="items-center flex  max-lg:flex max-lg:gap-2 max-md:pt-3">
           <div className="relative" >
             {user ? (
               <div
                 className="flex items-center gap-4 top-3 cursor-pointer"
                 onClick={toggleDropdown}
               >
-                <span className="capitalize font-medium">{user}</span>
+                <span className="capitalize font-medium max-lg:hidden">{user}</span>
+                <FaUser className="max-lg:block hidden"/>
               </div>
             ) : (
               <Link to="/login" className="hover:underline">

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <nav className="max-lg:pl-[350px] max-lg:w-full">
+    <nav className="">
       <ul className="flex gap-10 capitalize font-normal text-[17px] max-lg:hidden">
         <Link
           to="/"
@@ -52,8 +52,9 @@ const Navbar = () => {
           Contact
         </Link>
       </ul>
-
-      <FaBars className="hidden max-lg:block " />
+      <div>
+        <FaBars className="hidden max-lg:block" />
+      </div>
     </nav>
   );
 };

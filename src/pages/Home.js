@@ -122,7 +122,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-white py-8 mt-5 max-md:py-0 max-md:mt-4">
+      <section className="bg-white py-8 mt-5 max-md:py-0 max-md:mt-4 max-md:px-4">
         <div className="container mx-auto  ">
           <div>
             <div className=" mb-6 text-[30px] capitalize font-bold leading-[1.4] tracking-wider ">

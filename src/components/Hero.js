@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import WomanImg from "../image/women.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -26,13 +25,13 @@ const Hero = () => {
         <Slider {...banners}>
           <div className=" relative ">
             <div>
-              <img src={Banner1} className="max-md:h-[300px]" />
+              <img src={Banner1} className="max-md:h-[300px] max-lg:h-[450px]" />
             </div>
             <div className=" absolute right-[40%] top-[20%] left-[10%]">
               <div className="font-semibold flex items-center uppercase tracking-widest ">
                 <div className=" w-10 h-[2px] bg-red-500 mr-3"></div>New Trend
               </div>
-              <h1 className="text-[65px] leading-[1.4] font-light mb-4 tracking-wider max-md:text-[20px] max-md:leading-[40px]">
+              <h1 className="text-[65px] leading-[1.4] font-light mb-4 tracking-wider max-md:text-[20px] max-md:leading-[40px] max-lg:text-[45px] max-lg:leading-[65px]">
                 E-SHOP SALE STYLES <span className="font-semibold">MEN'S</span>
               </h1>
               <button className="bg-black text-white py-3 px-5 rounded-full hover:bg-transparent hover:text-black hover:border border-black tracking-wider leading-5 max-md:py-2 ">
@@ -48,13 +47,13 @@ const Hero = () => {
 
           <div className=" relative">
             <div>
-              <img src={Banner2} className="max-md:h-[300px]" />
+              <img src={Banner2} className="max-md:h-[300px] max-lg:h-[450px]" />
             </div>
             <div className=" absolute right-[40%] top-[20%] left-[10%]">
               <div className="font-semibold flex items-center uppercase tracking-widest ">
                 <div className=" w-10 h-[2px] bg-red-500 mr-3"></div>New Trend
               </div>
-              <h1 className="text-[65px] leading-[1.4] font-light mb-4 tracking-wider max-md:text-[20px] max-md:leading-[40px]">
+              <h1 className="text-[65px] leading-[1.4] font-light mb-4 tracking-wider max-md:text-[20px] max-md:leading-[40px] max-lg:text-[40px] max-lg:leading-[65px]">
                 E-SHOP SALE STYLES{" "}
                 <span className="font-semibold">WOMEN'S</span>
               </h1>
@@ -71,13 +70,13 @@ const Hero = () => {
 
           <div className=" relative">
             <div>
-              <img src={Banner3} className="w-[1700px] max-md:h-[300px]" />
+              <img src={Banner3} className="w-[1700px] max-md:h-[300px] max-lg:h-[450px]" />
             </div>
             <div className=" absolute right-[40%] top-[20%] left-[10%] ">
               <div className="font-semibold flex items-center uppercase tracking-widest ">
                 <div className=" w-10 h-[2px] bg-red-500 mr-3"></div>sale
               </div>
-              <h1 className="text-[65px] leading-[1.4] font-light mb-4 tracking-wider uppercase max-md:text-[17px] max-md:leading-[40px]">
+              <h1 className="text-[65px] leading-[1.4] font-light mb-4 tracking-wider uppercase max-md:text-[17px] max-md:leading-[40px] max-lg:text-[35px] max-lg:leading-[65px]">
                 get up to 30% off{" "}
                 <span className="font-semibold uppercase">electronics</span>
               </h1>
