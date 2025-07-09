@@ -62,24 +62,24 @@ const ProductDetails = () => {
             <BsBag /> Product added to cart!
           </div>
         )}
-        <div className=" flex  max-lg:flex-row items-center max-md:justify-between mt-3 max-md:block">
-          <div className="flex flex-1 justify-center items-center mb-8 max-lg:mb-0">
+        <div className=" flex  lg:flex-row items-center md:justify-between mt-3">
+          <div className="flex flex-1 justify-center items-center mb-8 lg:mb-0">
             <img
               src={image}
-              className="max-w-[200px] max-h-[400px] max-lg:max-w-sm "
+              className="max-w-[200px] max-h-[400px] lg:max-w-sm "
             />
           </div>
-          <div className="flex-1 text-center max-lg:text-left max-md:pl-4 max-md:mt-5 ">
+          <div className="flex-1 text-center lg:text-left ">
             <div className="mb-4 uppercase text-gray-500 text-lg">
               <h1>{category}</h1>
             </div>
-            <h1 className="text-[30px] font-medium mb-2 max-w-[590px] mx-auto max-lg:mx-0">
+            <h1 className="text-[30px] font-medium mb-2 max-w-[590px] mx-auto lg:mx-0">
               {title}
             </h1>
-            <div className="text-2xl text-red-500 font-bold mb-2">
+            <div className="text-2xl text-red-500 font-bold mt-3">
               $ {price}
             </div>
-            <h2 className="flex items-center font-normal text-xl text-black  gap-2 mb-6 ">
+            <h2 className="flex items-center font-normal text-xl text-black  gap-2 my-4 ">
               Rating: {rating && rating.rate}{" "}
               <span className="flex gap-1 ml-2">
                 {renderStars(rating.rate)}
